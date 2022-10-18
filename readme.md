@@ -3,6 +3,9 @@
 Micro-project used as a POC (Proof Of Concept) on how to run Jest tests for
 your project entities when these are mapped using Mikro-ORM decorators.
 
+Initial GitHub's MikroORM discussion:  
+https://github.com/mikro-orm/mikro-orm/discussions/3605
+
 ## Settings
 
 This project provides a `docker-compose.yaml` file to provide a database

@@ -11,7 +11,7 @@ export default class User {
     @Property({ name: 'email', type: 'string', length: 100, unique: true, nullable: false })
     email: string;
 
-    @OneToMany({ entity: 'Profile', mappedBy: 'user' })
+    @OneToMany({ entity: () => Profile, mappedBy: 'user' })
     readonly profiles: Collection<Profile> = new Collection<Profile>(this);
 
     constructor (email: string, profileName: string) {

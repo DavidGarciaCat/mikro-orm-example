@@ -3,11 +3,8 @@ import { MariaDbDriver } from "@mikro-orm/mariadb";
 import User from '../model/user';
 import Profile from "../model/profile";
 
-const shouldConnect = ('test' !== process.env.NODE_ENV);
-console.log('shouldConnect', shouldConnect);
-
-export default MikroORM.init<MariaDbDriver>(
-    {
+export default (shouldConnect: boolean = true): Promise<MikroORM<MariaDbDriver>> => {
+    return MikroORM.init<MariaDbDriver>({
         debug: false,
         allowGlobalContext: true,
         entities: [ User, Profile ],
@@ -18,6 +15,5 @@ export default MikroORM.init<MariaDbDriver>(
         user: 'test_user',
         password: 'test_password',
         charset: 'utf8mb4',
-    },
-    shouldConnect // Don't connect to the DB for testing reasons
-);
+    }, shouldConnect);
+}

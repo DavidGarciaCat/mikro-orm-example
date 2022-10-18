@@ -1,7 +1,8 @@
-import mikroORM from './init/mikro-orm';
+import ormInit from './init/mikro-orm';
 
 async function initORM() {
-    const orm = await mikroORM;
+    // Establish a real DB connection and init the ORM settings
+    const orm = await ormInit();
     const conn = await orm.isConnected();
 
     if (conn) {

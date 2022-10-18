@@ -12,7 +12,7 @@ export default class Profile {
     name: string;
 
     @ManyToOne({
-        entity: () => User, inversedBy: 'profiles', referenceColumnName: 'uuid',
+        entity: 'User', inversedBy: 'profiles', referenceColumnName: 'uuid',
         name: 'user_uuid', fieldName: 'user_uuid', nullable: false,
     })
     readonly user: User;

@@ -1,0 +1,21 @@
+{
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "dist/**/*.{js,jsx,ts}",
+      "src/**/*.{js,jsx,ts}",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ],
+    "coverageDirectory": "<rootDir>/coverage/",
+    "coverageReporters": [
+      "text",
+      "html",
+      "clover"
+    ],
+    "preset": "ts-jest",
+    "roots": [
+      "tests"
+    ],
+    "verbose": true
+  }
+  
